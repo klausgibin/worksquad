@@ -457,7 +457,7 @@ After writing the final "completed" state to `squads/{name}/state.json`:
 
 This archives the run state for the `runs` command while keeping the squad root clean.
 
-2. **Update squad memory** — write to BOTH files:
+2. **Update squad memory** — write to BOTH files (runs after Post-Completion Cleanup above):
 
    ### 2a. Update `memories.md` (living preferences)
 
@@ -483,7 +483,18 @@ This archives the run state for the `runs` command while keeping the squad root 
 
    After applying all candidates, write the updated `memories.md`.
 
-   ### 2b. Prepend to `runs.md` (append-only log)
+   If no candidates are found (the run had no explicit user feedback), skip writing `memories.md` entirely — do not write an unmodified copy. Always proceed to step 2b regardless.
+
+   ### 2b. Prepend to `runs.md` (reverse-chronological log — newest run first)
+
+   If `squads/{name}/_memory/runs.md` does not exist, create it first with:
+   ```markdown
+   # Run History: {squad-name}
+
+   | Data | Run ID | Tema | Output | Resultado |
+   |------|--------|------|--------|-----------|
+   ```
+   Then proceed to prepend the new row.
 
    Read `squads/{name}/_memory/runs.md`. Prepend one new row to the table (immediately after the header row), with:
    - `Data`: today's date in YYYY-MM-DD format
