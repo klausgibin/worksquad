@@ -150,13 +150,13 @@ Based on discovery answers + company context + research findings + extracted art
 
 ### Design Philosophy
 
-Build agile, objective squads. Each agent should have the minimum tasks necessary to fulfill its role. Avoid redundant passes, cascading reviews, or separate optimization tasks. A single well-crafted task that combines creation and basic optimization is better than three tasks that split the work artificially.
+Recruit all agents necessary for the job. If the squad needs a designer, create a designer. If it needs a researcher and a copywriter, create both with distinct responsibilities. Each agent must have a clear responsibility and the tasks needed to fulfill it.
+
+What you should NOT do is create redundant agents or unnecessary optimization passes. Avoid cascading reviews or separate optimization tasks that don't add clear value. But never consolidate distinct roles into a single agent just to reduce count — that produces worse results.
 
 Guidelines:
-- 1-2 tasks per agent maximum
-- One creator agent (generic writer), not per-platform specialists
-- Combined optimization embedded in the creation task
-- Single-pass review (no separate scoring + feedback tasks)
+- Create as many agents as the job requires — a designer, a researcher, a copywriter, a reviewer, etc.
+- Each agent gets a clear, distinct responsibility
 - Research agents must be direct and focused — no exhaustive surveys
 
 Design the squad with appropriate agents:
